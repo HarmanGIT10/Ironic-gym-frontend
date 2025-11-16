@@ -1,0 +1,49 @@
+/* src/pages/ProfilePage.css */
+
+/* Style for all form inputs */
+.form-input {
+  @apply mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-3 transition-all duration-300;
+  /* --- REMOVE THE FOCUS STYLE FROM HERE --- */
+  /* @apply focus:ring-2 focus:ring-black focus:border-black; */
+}
+
+/* Style for inputs when in read-only mode */
+.form-input-readonly {
+  @apply bg-gray-50 border-gray-100 shadow-none;
+}
+
+/* --- NEW CLASS ---
+   Style for inputs when in EDITING mode
+*/
+.form-input-editing {
+  @apply ring-2 ring-black border-black;
+}
+
+
+/* --- Shiny Button Hover Effect --- */
+.btn-shiny {
+  position: relative;
+  overflow: hidden;
+  z-index: 1; 
+}
+
+.btn-shiny::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    110deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.5) 50%,
+    transparent 60%
+  );
+  transition: transform 0.8s ease;
+  z-index: -1;
+}
+
+.btn-shiny:hover::before {
+  transform: translateX(100%);
+}

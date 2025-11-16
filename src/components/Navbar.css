@@ -1,0 +1,91 @@
+/* === NAVBAR UPGRADE PACK === */
+
+.navbar-glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Floating Brand */
+
+.search-dropdown img {
+ width: 120px;
+   /* increases row height */
+   height: 120px;
+}
+
+
+
+
+/* Underline Hover */
+.navbar-underline {
+  position: relative;
+}
+.navbar-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+.navbar-underline:hover::after {
+  width: 100%;
+}
+
+/* Shiny Flash Effect */
+.navbar-link {
+  position: relative;
+  overflow: hidden;
+}
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: all 0.6s ease;
+}
+.navbar-link:hover::after {
+  left: 100%;
+}
+.nav-signup-btn {
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.nav-signup-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.nav-signup-btn:hover::before {
+  left: 100%;
+}
+
+.nav-signup-btn:hover {
+  transform: translateY(-2px);
+  background-color: #111;
+}

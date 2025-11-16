@@ -1,0 +1,93 @@
+/* Base card — SAME SIZE AS BEFORE */
+.product-card {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+}
+
+/* Subtle luxury hover */
+.product-card:hover {
+  border-color: #000;
+  
+ 
+}
+
+/* Image — SAME WIDTH/HEIGHT (uses your JSX) */
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;    /* ensures perfect fit */
+  object-position: center;
+  transition: all 0.4s ease;
+}
+
+/* Image hover → Black & White + slight zoom */
+
+
+/* Brand */
+.product-card p.text-gray-500 {
+  font-size: 0.75rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+/* Name */
+.product-card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+/* Price */
+.product-card p.text-gray-700 {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Review star size */
+.product-card svg {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+/* Quick Add button (luxury black theme) */
+.product-card .quick-add-btn {
+  background: #000;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shine effect like your Sign Up button */
+.product-card .quick-add-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.product-card .quick-add-btn:hover::before {
+  left: 120%;
+}
+
+.product-card .quick-add-btn:hover {
+  background: #111;
+  transform: translateY(-2px);
+}
