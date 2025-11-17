@@ -19,7 +19,7 @@ export default function PaymentSuccessPage() {
         const orderData = JSON.parse(localStorage.getItem("orderData"));
         if (!orderData) throw new Error("No order data found.");
 
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
+        const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/orders", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

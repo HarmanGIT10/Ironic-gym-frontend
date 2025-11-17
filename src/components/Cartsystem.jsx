@@ -69,7 +69,7 @@ export default function CartSystem() {
             if (!token) throw new Error("You must be signed in to check out. Please go to the Auth page.");
             if (cart.length === 0) throw new Error("Your cart is empty.");
 
-            const profileRes = await fetch(`${import.meta.env.VITE_API_URL}/api/users/me`, {
+            const profileRes = await fetch("https://ironic-gym-backend-11.vercel.app/api/users/me", {
               headers: { "Authorization": `Bearer ${token}` },
             });
             if (!profileRes.ok) throw new Error("Could not verify your profile. Please log in again.");
@@ -92,7 +92,7 @@ export default function CartSystem() {
         setIsLoading(true);
         setError(null);
         try {
-            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/create-checkout-session`, {
+            const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/create-checkout-session", {
                 method: "POST",
                 headers: { 
                   "Content-Type": "application/json",

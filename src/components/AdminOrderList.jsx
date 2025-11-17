@@ -29,7 +29,7 @@ export default function AdminOrderList() {
     const fetchAllOrders = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
+        const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/orders", {
           headers: { "Authorization": `Bearer ${token}` },
         });
         if (!res.ok) throw new Error("Failed to fetch orders");
@@ -49,7 +49,7 @@ export default function AdminOrderList() {
   // Function to handle status update
   const handleStatusUpdate = async (orderId, newStatus) => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders/${orderId}/status`, {
+      const res = await fetch(`https://ironic-gym-backend-11.vercel.app/api/orders/${orderId}/status`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export default function AdminOrderList() {
   // --- 2. ADD NEW FUNCTION TO SAVE DELIVERY DATE ---
   const handleDateUpdate = async (orderId) => {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/orders/${orderId}/status`, {
+      const res = await fetch(`https://ironic-gym-backend-11.vercel.app/api/orders/${orderId}/status`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

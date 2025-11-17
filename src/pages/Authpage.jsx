@@ -80,7 +80,7 @@ export default function AuthPage() {
         if (!otpSent) {
           setOtpSent(true);
 
-          const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/send-otp`, {
+          const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/auth/send-otp", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: formData.email }),
@@ -95,7 +95,7 @@ export default function AuthPage() {
           setMessage("Sign up OTP sent to your email.");
           return;
         } else {
-          const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/verify-otp`, {
+          const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/auth/verify-otp", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ ...formData, otp }),
@@ -112,7 +112,7 @@ export default function AuthPage() {
 
       // SIGNIN
       if (mode === "signin") {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/signin`, {
+        const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/auth/signin", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
@@ -129,7 +129,7 @@ export default function AuthPage() {
 
       // FORGOT PASSWORD (send OTP)
       if (mode === "forgot") {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/send-reset-otp`, {
+        const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/auth/send-reset-otp", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email: formData.email }),
@@ -145,7 +145,7 @@ export default function AuthPage() {
 
       // RESET PASSWORD
       if (mode === "reset") {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/reset-password`, {
+        const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/auth/reset-password", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -280,7 +280,7 @@ export default function AuthPage() {
                     const result = await signInWithPopup(auth, googleProvider);
                     const user = result.user;
 
-                    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/google-signin`, {
+                    const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/auth/google-signin", {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
                       body: JSON.stringify({

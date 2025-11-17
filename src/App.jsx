@@ -62,7 +62,7 @@ export default function App() {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/products`);
+        const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/products");
         if (!res.ok) {
           throw new Error("Failed to fetch products from the database.");
         }

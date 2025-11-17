@@ -80,7 +80,7 @@ export default function ProfilePage() {
     setMessage("");
     setError("");
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/me`, {
+      const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/users/me", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
