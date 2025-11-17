@@ -3,7 +3,7 @@
 import { initializeApp } from "firebase/app";
 
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
-const firebaseConfig = {
+/*const firebaseConfig = {
   apiKey: "AIzaSyB_IrONsrXkuE0aazr9MAxTaR_wwi4Bk8A",
   authDomain: "ironic-66cde.firebaseapp.com",
   projectId: "ironic-66cde",
@@ -11,6 +11,15 @@ const firebaseConfig = {
   messagingSenderId: "240773784002",
   appId: "1:240773784002:web:373867d5236e14607f365b",
   measurementId: "G-2N54JKMLX6"
+};*/
+const firebaseConfig = {
+  apiKey: "AIzaSyAnNrBvojbBgVgHCVSIx7ty9OZd_vSg5Hc",
+  authDomain: "gym-store-79523.firebaseapp.com",
+  projectId: "gym-store-79523",
+  storageBucket: "gym-store-79523.firebasestorage.app",
+  messagingSenderId: "63692999751",
+  appId: "1:63692999751:web:1344580e4a842eaaecf562",
+  measurementId: "G-5ETGJ2WNRV"
 };
 
 // Initialize Firebase
