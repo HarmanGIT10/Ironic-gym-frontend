@@ -20,7 +20,7 @@ export default function BillingAddressModal({ show, onClose, onConfirm, isLoadin
   const fetchProfileData = async () => {
     setLoadingProfile(true);
     try {
-      const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/users/me", {
+      const res = await fetch("https://ironic-gym-backend.onrender.com/api/users/me", {
         headers: { "Authorization": `Bearer ${token}` },
       });
       const profile = await res.json();

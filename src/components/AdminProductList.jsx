@@ -14,7 +14,7 @@ export default function AdminProductList({ refreshKey }) {
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/products");
+        const res = await fetch("https://ironic-gym-backend.onrender.com/api/products");
         if (!res.ok) throw new Error("Failed to fetch products");
         const data = await res.json();
         setProducts(data);
@@ -32,7 +32,7 @@ export default function AdminProductList({ refreshKey }) {
       return;
     }
     try {
-      const res = await fetch(`https://ironic-gym-backend-11.vercel.app/api/products/${productId}`, {
+      const res = await fetch(`https://ironic-gym-backend.onrender.com/api/products/${productId}`, {
         method: "DELETE",
         headers: { "Authorization": `Bearer ${token}` },
       });
@@ -46,7 +46,7 @@ export default function AdminProductList({ refreshKey }) {
 
   const handleUpdateStock = async (product) => {
     try {
-      const res = await fetch(`https://ironic-gym-backend-11.vercel.app/api/products/${product._id}`, {
+      const res = await fetch(`https://ironic-gym-backend.onrender.com/api/products/${product._id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

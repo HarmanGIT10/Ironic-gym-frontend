@@ -34,7 +34,7 @@ export default function AddProductForm({ onProductAdded }) {
     setSuccess("");
 
     try {
-      const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/products/add", {
+      const res = await fetch("https://ironic-gym-backend.onrender.com/api/products/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

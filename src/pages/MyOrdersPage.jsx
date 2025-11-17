@@ -22,7 +22,7 @@ export default function OrdersPage() {
 
       setLoading(true);
       try {
-        const res = await fetch("https://ironic-gym-backend-11.vercel.app/api/orders/myorders", {
+        const res = await fetch("https://ironic-gym-backend.onrender.com/api/orders/myorders", {
           headers: { "Authorization": `Bearer ${token}` }
         });
 
