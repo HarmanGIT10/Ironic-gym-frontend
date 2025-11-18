@@ -492,3 +492,23 @@ html, body, #root {
   overflow-y: hidden;
   margin-bottom: 100px;
 }
+@media (max-width: 767px) {
+  .auth-page-container {
+    flex-direction: column;
+  }
+
+  .auth-page-container::after {
+    display: none;
+  }
+
+  .auth-page-decorative-panel {
+    display: none;
+  }
+
+  .auth-page-form-panel {
+    width: 100%;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+}
+
