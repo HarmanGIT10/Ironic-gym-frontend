@@ -25,7 +25,7 @@ export default function ProfilePage() {
     const fetchProfile = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/users/me`, {
+        const res = await fetch("https://ironic-gym-backend.onrender.com/api/users/me", {
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${token}`,
