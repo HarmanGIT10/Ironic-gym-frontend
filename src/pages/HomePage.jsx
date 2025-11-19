@@ -158,22 +158,22 @@ const HomePage = () => {
         <ProductSlider
           title="Hoodies"
           products={hoodiesData}
-          placeholderText="Comming Soon!"
+          placeholderText="Coming Soon!"
         />
         <ProductSlider
           title="Tees"
           products={teesData}
-          placeholderText="Comming Soon!"
+          placeholderText="Coming Soon!"
         />
         <ProductSlider
           title="Shorts"
           products={shortsData}
-          placeholderText="Comming Soon!"
+          placeholderText="Coming Soon!"
         />
         <ProductSlider
           title="Accessories"
           products={accessoriesData}
-          placeholderText="Comming Soon!"
+          placeholderText="Coming Soon!"
         />
 
         {/* --- 4. FEATURES (MODIFIED) --- */}
