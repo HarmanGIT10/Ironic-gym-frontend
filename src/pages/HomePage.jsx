@@ -144,11 +144,13 @@ const HomePage = () => {
         </section>
 
         {/* --- 3. PRODUCT SLIDERS (REPLACED) --- */}
-        <ProductSlider
-          title="Best Sellers"
-          products={bestSellersData}
-          placeholderText="No best sellers found."
-        />
+       <div id="best-sellers" className="scroll-mt-24"> 
+  <ProductSlider
+    title="Best Sellers"
+    products={bestSellersData}
+    placeholderText="No best sellers found."
+  />
+</div>
         <ProductSlider
           title="Hoodies"
           products={hoodiesData}
