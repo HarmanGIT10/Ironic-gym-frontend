@@ -64,11 +64,18 @@ export default function ProfilePage() {
   }, [token]);
 
   // 2. Handle form input changes
+// 2. Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     if (name === "phone") {
-      const numericValue = value.replace(/[^0-9]/g, ''); 
-      setFormData({ ...formData, [name]: numericValue });
+      // 1. Remove non-numbers
+      const numericValue = value.replace(/[^0-9]/g, '');
+
+      // 2. CHECK LENGTH: Only update if 10 digits or less
+      if (numericValue.length <= 10) {
+        setFormData({ ...formData, [name]: numericValue });
+      }
     } else {
       setFormData({ ...formData, [name]: value });
     }
