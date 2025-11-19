@@ -40,13 +40,7 @@ const HomePage = () => {
   const shortsData = allProducts.filter(p => p.category === 'Shorts');
   const accessoriesData = allProducts.filter(p => p.category === 'Accessory');
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-2xl">Loading products...</p>
-      </div>
-    );
-  }
+  
 
   if (error) {
     return (
