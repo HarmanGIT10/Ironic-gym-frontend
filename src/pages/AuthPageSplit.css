@@ -511,4 +511,51 @@ html, body, #root {
     padding: 1rem;
   }
 }
+/* Wrapper */
+.auth-page-phone-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Country Code Select – Normal White */
+.auth-page-select-code {
+  width: 110px !important;
+  padding: 12px 5px !important;
+  text-align: center;
+  cursor: pointer;
+
+  background-color: #ffffff; /* Normal state = white */
+  color: #000000; /* Black text */
+
+  border: 1px solid #ccc;
+  border-radius: 8px;
+
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover → little dark (not grey, just slightly darker white) */
+.auth-page-select-code:hover {
+  background-color: #f2f2f2; /* Slight dark shade */
+  border-color: #bbb;
+}
+
+/* When clicking (focus) → small outline, not full white flash */
+.auth-page-select-code:focus {
+  background-color: #ffffff; /* Keep white */
+  border-color: #888;
+  outline: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Phone Number Input */
+.auth-page-phone-number {
+  flex: 1;
+}
+
+/* Input Focus */
+.auth-page-phone-number:focus {
+  outline: 2px solid rgba(0,0,0,0.2);
+  border-color: transparent;
+}
 
