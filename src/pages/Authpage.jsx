@@ -19,6 +19,7 @@ export default function AuthPage() {
     email: "",
     password: "",
     phone: "",
+    countryCode: "+1",
     newPassword: "",
   });
 
@@ -38,8 +39,9 @@ export default function AuthPage() {
     setError("");
     setMessage("");
     setOtpSent(false);
-    setFormData({ name: "", email: "", password: "", phone: "", newPassword: "" });
+setFormData({ name: "", email: "", password: "", phone: "", countryCode: "+1", newPassword: "" });    
     setOtp("");
+    
   }, [location.search]);
 
   const toggleMode = () => {
@@ -80,10 +82,18 @@ export default function AuthPage() {
         if (!otpSent) {
           setOtpSent(true);
 
+          // COMBINE PHONE NUMBER HERE
+          const fullPhoneNumber = `${formData.countryCode}${formData.phone}`;
+
+          // Use this payload for the fetch request
           const res = await fetch("https://ironic-gym-backend.onrender.com/api/auth/send-otp", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email: formData.email }),
+            // Send fullPhoneNumber instead of just formData.phone
+            body: JSON.stringify({ 
+                email: formData.email, 
+                phone: fullPhoneNumber 
+            }),
           });
 
           const data = await res.json();
@@ -207,17 +217,30 @@ export default function AuthPage() {
                 <input name="email" type="email" placeholder="Email" value={formData.email} onChange={handleChange} className="auth-page-input" required />
                 <input name="password" type="password" placeholder="Password" value={formData.password} onChange={handleChange} className="auth-page-input" required />
                 {/* --- New Phone Input with +1 Prefix --- */}
-                <div className="auth-page-phone-wrapper">
-                  <span className="auth-page-phone-prefix">[ +1 ]</span>
-                  <input
-                    name="phone"
-                    type="tel"
-                    placeholder="Phone Number (10 digits)"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="auth-page-input auth-page-phone-input"
-                    required
-                  />
+                 <div className="auth-page-phone-row">
+                   {/* 1. Country Code Dropdown */}
+                   <select 
+                     name="countryCode" 
+                     value={formData.countryCode} 
+                     onChange={handleChange} 
+                     className="auth-page-input auth-page-select-code"
+                   >
+                     <option value="+1">US +1</option>
+                     <option value="+91">IN +91</option>
+                     <option value="+44">GB +44</option>
+                     <option value="+93">AF +93</option>
+                   </select>
+
+                   {/* 2. Phone Number Input */}
+                   <input
+                     name="phone"
+                     type="tel"
+                     placeholder="Phone Number"
+                     value={formData.phone}
+                     onChange={handleChange}
+                     className="auth-page-input auth-page-phone-number"
+                     required
+                   />
                 </div>
                 {/* --- End of new phone input --- */}
 
