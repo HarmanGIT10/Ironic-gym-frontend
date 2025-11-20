@@ -102,7 +102,7 @@ export default function App() {
             
             {/* HomePage no longer fetches its own data */}
             <Route path="/" element={<HomePage />} />
-            <Route path="/product/:id" element={<ProductDetailsPage />} />
+           
             
             <Route
               path="/profile"
