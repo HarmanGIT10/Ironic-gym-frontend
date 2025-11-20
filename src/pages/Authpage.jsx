@@ -92,7 +92,8 @@ setFormData({ name: "", email: "", password: "", phone: "", countryCode: "+1", n
             // Send fullPhoneNumber instead of just formData.phone
             body: JSON.stringify({ 
                 email: formData.email, 
-                phone: fullPhoneNumber 
+                phone: fullPhoneNumber,
+              otp
             }),
           });
 
