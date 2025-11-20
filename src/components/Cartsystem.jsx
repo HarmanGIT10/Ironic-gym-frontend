@@ -156,6 +156,7 @@ export default function CartSystem() {
                 image: btn.dataset.productImage,
                 brand: btn.dataset.productBrand // 3. READ THE BRAND
             };
+            const qty = btn.dataset.productQuantity;
             addToCart(product, qty);
         };
         document.body.addEventListener("click", handleQuickAdd);
