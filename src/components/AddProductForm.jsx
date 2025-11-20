@@ -11,6 +11,7 @@ export default function AddProductForm({ onProductAdded }) {
     quantity: "",
     category: "Tee", 
     isBestSeller: false,
+    description: "",
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
@@ -60,8 +61,8 @@ export default function AddProductForm({ onProductAdded }) {
 
       setSuccess("Product added successfully!");
       setFormData({
-        name: "", price: "", brand: "", quantity: "",
-        category: "Tee", isBestSeller: false,
+         name: "", price: "", brand: "", quantity: "",
+         category: "Tee", isBestSeller: false, description: "" 
       });
       
       // Also clear the image URL inputs
@@ -99,7 +100,17 @@ export default function AddProductForm({ onProductAdded }) {
           required
         />
       </div>
-      
+      <div>
+        <label className="block text-sm font-medium text-gray-700">Description</label>
+        <textarea
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+          rows="4"
+          placeholder="Enter product details..."
+          className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2"
+        />
+      </div>
       {/* ...rest of your form (name, price, brand, etc.) ... */}
 
       <div>
