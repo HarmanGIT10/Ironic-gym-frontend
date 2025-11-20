@@ -295,8 +295,8 @@ export default function ProductDetailsPage() {
                 <div className="w-10 h-10 mx-auto bg-purple-50 rounded-full flex items-center justify-center text-purple-600 mb-2">
                   <RefreshCcw className="w-5 h-5" />
                 </div>
-                <p className="text-xs font-bold text-gray-900">Easy to washable</p>
-                <p className="text-[10px] text-gray-500">Every Day wear</p>
+                <p className="text-xs font-bold text-gray-900">Easy to Wash</p>
+                <p className="text-[10px] text-gray-500">Every Day Wear</p>
               </div>
             </div>
           </div>
