@@ -150,7 +150,7 @@ export default function ProductDetailsPage() {
           <div className="flex flex-col">
             {/* Header */}
             <div className="mb-6 border-b border-gray-100 pb-6">
-              <p className="text-sm font-bold text-indigo-600 uppercase tracking-wider mb-2">
+              <p className="text-sm font-bold text-black-600 uppercase tracking-wider mb-2">
                 {product.brand || "Ironic Brand"}
               </p>
 
@@ -167,7 +167,7 @@ export default function ProductDetailsPage() {
                   <Star className="w-4 h-4 text-gray-300" />
                 </div>
                 <span className="text-sm text-gray-500 font-medium">
-                  (4.2/5 based on 24 reviews)
+                  New Arrival!!
                 </span>
               </div>
 
