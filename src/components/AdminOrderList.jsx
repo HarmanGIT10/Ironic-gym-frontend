@@ -152,6 +152,11 @@ export default function AdminOrderList() {
                     <h4 className="text-sm font-bold text-gray-900 uppercase mb-2 border-b pb-1">Customer Details</h4>
                     <p className="text-sm font-semibold text-gray-800">{order.shippingAddress.name}</p>
                     <p className="text-sm text-gray-600">{order.shippingAddress.email}</p>
+                   {order.user && (
+      <p className="text-sm text-blue-600 font-mono mt-1">
+        Account: {order.user.countryCode}{order.user.phone}
+      </p>
+    )}
                     <p className="text-sm text-gray-600">{order.shippingAddress.phone}</p>
                  </div>
 
