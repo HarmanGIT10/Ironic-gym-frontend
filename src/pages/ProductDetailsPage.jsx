@@ -237,6 +237,7 @@ export default function ProductDetailsPage() {
                       data-product-price={product.price}
                       data-product-image={product.cartImageUrl}
                       data-product-brand={product.brand}
+                      data-product-quantity={quantity}
                     >
                       Add to Cart
                     </button>
@@ -249,6 +250,7 @@ export default function ProductDetailsPage() {
                       data-product-price={product.price}
                       data-product-image={product.cartImageUrl}
                       data-product-brand={product.brand}
+                      data-product-quantity={quantity}
                     >
                       Buy Now
                     </button>
