@@ -9,7 +9,7 @@ function formatPrice(priceInCents) {
 export default function ProductCard({ id, name, priceInCents, mainImageUrl, cartImageUrl, reviewCount, inStock, brand }) {
   return (
     <div id={id} className="slider-item product-card group bg-white border border-gray-200 rounded-lg overflow-hidden">
-      <a href="#" className="block" onClick={(e) => e.preventDefault()}>
+      <Link to={`/product/${id}`} className="block">
         <div className="w-full h-[300px] overflow-hidden rounded-md">
           <img
             src={mainImageUrl}
