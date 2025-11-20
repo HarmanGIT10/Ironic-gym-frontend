@@ -34,18 +34,26 @@ export default function CartSystem() {
     const openCart = () => { setIsCartOpen(true); setError(null); };
     const closeCart = () => setIsCartOpen(false);
 
-    const addToCart = useCallback((product) => {
-        setCart((prev) => {
-            const existing = prev.find((i) => i.id === product.id);
-            if (existing) {
-                return prev.map((i) =>
-                    i.id === product.id ? { ...i, quantity: i.quantity + 1 } : i
-                );
-            }
-            return [...prev, { ...product, quantity: 1 }];
-        });
-        openCart();
-    }, []);
+    const addToCart = useCallback((product, qty = 1) => {
+    const quantityToAdd = parseInt(qty, 10) || 1;
+
+    setCart((prev) => {
+        const existing = prev.find((i) => i.id === product.id);
+
+        if (existing) {
+            return prev.map((i) =>
+                i.id === product.id
+                    ? { ...i, quantity: i.quantity + quantityToAdd }
+                    : i
+            );
+        }
+
+        return [...prev, { ...product, quantity: quantityToAdd }];
+    });
+
+    openCart();
+}, []);
+
 
     const updateItemQuantity = (id, newQuantity) => {
         const quantity = parseInt(newQuantity, 10);
@@ -148,7 +156,7 @@ export default function CartSystem() {
                 image: btn.dataset.productImage,
                 brand: btn.dataset.productBrand // 3. READ THE BRAND
             };
-            addToCart(product);
+            addToCart(product, qty);
         };
         document.body.addEventListener("click", handleQuickAdd);
         
