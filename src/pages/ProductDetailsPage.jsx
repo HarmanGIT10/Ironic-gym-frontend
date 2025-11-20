@@ -280,23 +280,23 @@ export default function ProductDetailsPage() {
                   <Truck className="w-5 h-5" />
                 </div>
                 <p className="text-xs font-bold text-gray-900">Fast Delivery</p>
-                <p className="text-[10px] text-gray-500">3–5 days</p>
+                <p className="text-[10px] text-gray-500">7-10 days</p>
               </div>
 
               <div className="text-center">
                 <div className="w-10 h-10 mx-auto bg-green-50 rounded-full flex items-center justify-center text-green-600 mb-2">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
-                <p className="text-xs font-bold text-gray-900">Warranty</p>
-                <p className="text-[10px] text-gray-500">1 Year</p>
+                <p className="text-xs font-bold text-gray-900">Best Quality</p>
+                <p className="text-[10px] text-gray-500">Comfort</p>
               </div>
 
               <div className="text-center">
                 <div className="w-10 h-10 mx-auto bg-purple-50 rounded-full flex items-center justify-center text-purple-600 mb-2">
                   <RefreshCcw className="w-5 h-5" />
                 </div>
-                <p className="text-xs font-bold text-gray-900">Easy Returns</p>
-                <p className="text-[10px] text-gray-500">30 Day Policy</p>
+                <p className="text-xs font-bold text-gray-900">Easy to washable</p>
+                <p className="text-[10px] text-gray-500">Every Day wear</p>
               </div>
             </div>
           </div>
