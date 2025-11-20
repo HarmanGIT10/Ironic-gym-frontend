@@ -258,7 +258,7 @@ export default function ProductDetailsPage() {
 
                   <p className="text-xs text-center text-gray-500 mt-4 flex items-center justify-center gap-1">
                     <ShieldCheck className="w-3 h-3" /> Secure transaction via
-                    Stripe / Razorpay
+                    Stripe
                   </p>
                 </>
               ) : (
