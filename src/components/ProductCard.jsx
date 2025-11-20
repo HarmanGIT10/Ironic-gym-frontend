@@ -9,7 +9,7 @@ function formatPrice(priceInCents) {
 export default function ProductCard({ id, name, priceInCents, mainImageUrl, cartImageUrl, reviewCount, inStock, brand }) {
   return (
     <div id={id} className="slider-item product-card group bg-white border border-gray-200 rounded-lg overflow-hidden">
-      <a href="#" className="block" onClick={(e) => e.preventDefault()}>
+      <a href={`/product/${id}`} className="block" >
         <div className="w-full h-[300px] overflow-hidden rounded-md">
           <img
             src={mainImageUrl}
@@ -33,7 +33,10 @@ export default function ProductCard({ id, name, priceInCents, mainImageUrl, cart
               data-product-name={name}
               data-product-price={priceInCents}
               data-product-image={cartImageUrl}
-              data-product-brand={brand} // 3. Pass brand to cart
+              data-product-brand={brand}
+                onClick={(e) => {
+                e.preventDefault(); // 🛑 IMPORTANT: This stops the <a> tag from opening the page when you just want to add to cart
+              }}// 3. Pass brand to cart
             >
               Quick Add
             </button>
