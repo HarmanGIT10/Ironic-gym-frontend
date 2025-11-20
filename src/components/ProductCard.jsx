@@ -47,7 +47,7 @@ export default function ProductCard({ id, name, priceInCents, mainImageUrl, cart
           )}
 
         </div>
-      </a>
+      </Link>
     </div>
   );
 }
