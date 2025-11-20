@@ -12,7 +12,7 @@ import PaymentSuccessPage from "./pages/PaymentSuccessPage";
 import PaymentCancelPage from "./pages/PaymentCancelPage"; 
 import MyOrdersPage from "./pages/MyOrdersPage";
 
-
+import ProductDetailsPage from './pages/ProductDetailsPage';
 
 
 
@@ -102,6 +102,7 @@ export default function App() {
             
             {/* HomePage no longer fetches its own data */}
             <Route path="/" element={<HomePage />} />
+            <Route path="/product/:id" element={<ProductDetailsPage />} />
             
             <Route
               path="/profile"
