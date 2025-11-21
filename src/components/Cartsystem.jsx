@@ -96,50 +96,57 @@ export default function CartSystem() {
         }
     };
 
-    const handleConfirmBilling = async (billingAddress) => {
-        setIsLoading(true);
-        setError(null);
-        try {
-            const res = await fetch("https://ironic-gym-backend.onrender.com/api/create-checkout-session", {
-                method: "POST",
-                headers: { 
-                  "Content-Type": "application/json",
-                  "Authorization": `Bearer ${token}`
-                },
-                body: JSON.stringify({ products: cart })
-            });
+   const handleConfirmBilling = async (billingAddress) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+        const res = await fetch("https://ironic-gym-backend.onrender.com/api/create-checkout-session", {
+            method: "POST",
+            headers: { 
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${token}`
+            },
+            body: JSON.stringify({ products: cart })
+        });
 
-            if (!res.ok) {
-                const errorJson = await res.json();
-                throw new Error(errorJson.error || "Failed to create checkout session.");
-            }
+        // 1. Get the response body first
+        const data = await res.json();
 
-            const session = await res.json();
-            
-            localStorage.setItem("orderData", JSON.stringify({
-              cart: cart.map(item => ({
+        // 2. Check if backend said "Error" (like the Stock check we just added)
+        if (!res.ok) {
+            // This pulls the text: "Sorry, we only have 5 left..."
+            throw new Error(data.error || "Failed to create checkout session.");
+        }
+
+        // 3. If success, proceed...
+        const session = data; 
+        
+        localStorage.setItem("orderData", JSON.stringify({
+            cart: cart.map(item => ({
                 name: item.name,
-                brand: item.brand || "", // This will now have the brand
+                brand: item.brand || "", 
                 quantity: item.quantity,
                 price: item.price,
                 product: item.id,
                 cartImageUrl: item.image
-              })),
-              shippingAddress: billingAddress,
-              totalPrice: subtotal,
-            }));
-            
-            localStorage.removeItem("cart");
-            setCart([]);
-            window.location.href = session.url;
+            })),
+            shippingAddress: billingAddress,
+            totalPrice: subtotal,
+        }));
+        
+        localStorage.removeItem("cart");
+        setCart([]);
+        window.location.href = session.url;
 
-        } catch (err) {
-            setError(err.message); 
-            setIsBillingModalOpen(false); 
-            setIsCartOpen(true);
-        }
-        setIsLoading(false);
-    };
+    } catch (err) {
+        // 4. Display the error to the user
+        console.error("Checkout Error:", err.message);
+        setError(err.message); // <--- This puts the text in your Red Error Box
+        setIsBillingModalOpen(false); // Close the address modal
+        setIsCartOpen(true); // Re-open the cart so they can fix the quantity
+    }
+    setIsLoading(false);
+};
 
     // --- "Bridge" to External HTML ---
     useEffect(() => {
