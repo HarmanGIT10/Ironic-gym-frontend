@@ -231,7 +231,7 @@ const HomePage = () => {
             <div>
               <h5 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">Support</h5>
               <ul className="mt-4 space-y-3">
-                <li><a href="#" className="text-base text-gray-600 hover:text-gray-900 transition-colors">Help Center</a></li>
+                <li><a href="mailto:ironichelpcentre@gmail.com" className="text-base text-gray-600 hover:text-gray-900 transition-colors">ironichelpcentre@gmail.com</a></li>
                 <li><a href="#" className="text-base text-gray-600 hover:text-gray-900 transition-s">Contact Us</a></li>
 
               </ul>
