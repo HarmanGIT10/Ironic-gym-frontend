@@ -238,7 +238,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="mt-16 pt-8 border-t border-gray-200 text-center">
-            <p className="text-sm text-gray-500">&copy; 2025 IRONICGYM. All rights reserved.</p>
+            <p className="text-sm text-gray-500">&copy; 2025 IRONIC. All rights reserved.</p>
           </div>
         </div>
       </footer>
