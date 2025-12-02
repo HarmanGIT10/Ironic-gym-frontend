@@ -52,6 +52,10 @@ const HomePage = () => {
 
   return (
     <>
+      <p style={{position:"absolute", left:"-9999px"}}>
+  Ironic Gym offers premium gym clothing, athletic wear, and high-quality fitness gear for athletes.
+</p>
+
       <main>
         {/* --- 1. HERO SLIDER --- */}
         <section className="relative h-[80vh] w-full overflow-hidden text-white">
