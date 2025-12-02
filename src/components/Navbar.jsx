@@ -57,6 +57,10 @@ const Navbar = ({ allProducts }) => {
 
   return (
     <>
+      <p style={{position:"absolute", left:"-9999px"}}>
+  Ironic Gym offers premium gym clothing, athletic wear, and high-quality fitness gear for athletes.
+</p>
+
       <header className="navbar-glass sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <nav className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
