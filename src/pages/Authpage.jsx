@@ -26,6 +26,10 @@ export default function AuthPage() {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
 
+useEffect(() => {
+  document.title = "Sign In | Ironic Gym";
+}, []);
+  
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const modeParam = params.get("mode");
