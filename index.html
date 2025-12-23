@@ -30,11 +30,19 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "name": "Ironic Gym",
+      "url": "https://ironicgym.com",
+      "logo": "https://raw.githubusercontent.com/HarmanGIT10/photos/main/logo.jpeg",
+      "description": "Premium gym clothing and athletic wear brand.",
+      "sameAs": [
+        "https://www.instagram.com/ironicgym" 
+      ]
+    },
+    {
       "@type": "WebSite",
-      "@id": "https://ironicgym.com/#website",
       "url": "https://ironicgym.com/",
       "name": "Ironic Gym",
-      "description": "Premium gym clothing and athletic wear brand.",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://ironicgym.com/search?q={search_term_string}",
@@ -42,16 +50,18 @@
       }
     },
     {
-      "@type": "SiteNavigationElement",
-      "@id": "https://ironicgym.com/#navigation",
-      "hasPart": [
+      "@type": "ItemList",
+      "name": "Quick Links",
+      "itemListElement": [
         {
-          "@type": "WebPage",
+          "@type": "ListItem",
+          "position": 1,
           "name": "Sign Up",
           "url": "https://ironicgym.com/auth?mode=signup"
         },
         {
-          "@type": "WebPage",
+          "@type": "ListItem",
+          "position": 2,
           "name": "Sign In",
           "url": "https://ironicgym.com/auth?mode=signin"
         }
