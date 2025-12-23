@@ -26,17 +26,42 @@
     <meta property="og:type" content="website">
 
     <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "WebSite",
+      "@id": "https://ironicgym.com/#website",
+      "url": "https://ironicgym.com/",
       "name": "Ironic Gym",
-      "url": "https://ironicgym.com",
-      "logo": "https://ironicgym.com/src/logo.jpeg",
-      "description": "Premium gym clothing and athletic wear brand."
+      "description": "Premium gym clothing and athletic wear brand.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ironicgym.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://ironicgym.com/#navigation",
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Sign Up",
+          "url": "https://ironicgym.com/auth?mode=signup"
+        },
+        {
+          "@type": "WebPage",
+          "name": "Sign In",
+          "url": "https://ironicgym.com/auth?mode=signin"
+        }
+      ]
     }
-    </script>
+  ]
+}
+</script>
     
-    <title>Ironic</title>
+    
   </head>
   <body>
     <div id="root"></div>
